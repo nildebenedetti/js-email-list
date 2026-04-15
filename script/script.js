@@ -4,6 +4,11 @@
 // assegno API url a variabile
 const API_RANDOM_EMAIL = 'https://flynn.boolean.careers/exercises/api/random/mail';
 
+// inserisco riferimento al dom dove voglio inserire la mia email
+const divEmail = document.querySelector('.stampa-qui')
+
+
+
 // generare 10 indirizzi email e stamparli in pagina all'interno di una lista.
 // per farlo devo farmi il fetch e rtestituire data
 // poi da data devo stampare del json con proprieta' .json
@@ -16,7 +21,7 @@ fetch(API_RANDOM_EMAIL) // vado a cercare le API e restituisco una promessa (que
     .then ((jsonData) => { // QUANDO anche la promessa di trasformazione del dato sara mantenuta, ALLORA
         console.log('chiamata driin'); // checkpoint se la chiamata e'andata
         const randomEmail = jsonData.response;
-          // mi restituirai il valore corrispondente alla chiave response dentro oggetto json
+        return randomEmail;  // mi restituirai il valore corrispondente alla chiave response dentro oggetto json
     });
 
     
