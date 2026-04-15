@@ -1,0 +1,43 @@
+
+body {
+    background-color: peachpuff;
+}
+
+.card {
+    background-color: rgb(245, 240, 235);
+}
+
+.title {
+    color: rgb(191, 125, 125);
+    text-shadow: 1px 1px #a98585;
+}
+
+.card-title {
+    color: rgba(191, 125, 125, 0.687);
+}
+
+.card-body {
+    color:rgba(132, 82, 188, 0.685);
+}
+
+.stampa-qui {
+    color: #a98585;
+}
+
+.btn-refresh {
+    background-color: peachpuff;
+    color:#a98585;
+    border: 1px solid #a98585;
+}
+
+.btn-refresh:hover, 
+.btn-refresh:active {
+    background-color: #a98585;
+    color: peachpuff;
+    border: 1px solid #a98585;
+}
+
+/* transition al click */
+.mio-bottone:active {
+    transform: scale(0.95); /* Il bottone si rimpicciolisce leggermente */
+}
