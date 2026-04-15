@@ -22,9 +22,8 @@ fetch(API_RANDOM_EMAIL) // vado a cercare le API e restituisco una promessa (que
         return risposta.json() // mi salva e restituisce il valore risposta in formato json per la prossima promessa (appliciamo il metodo json)
     })
     .then ((jsonData) => { // QUANDO anche la promessa di trasformazione del dato sara mantenuta, ALLORA
-        console.log(jsonData.response); // checkpoint se la chiamata e'andata
         const randomEmail = jsonData.response;
-        divEmail.innerHTML += `<li>${randomEmail}</>`;
+        divEmail.innerHTML += `<li>${randomEmail}</>`; // stampo in inner html un <li> con la mail
     });
 
 };
