@@ -6,6 +6,8 @@ const API_RANDOM_EMAIL = 'https://flynn.boolean.careers/exercises/api/random/mai
 
 // inserisco riferimento al dom dove voglio inserire la mia email
 const divEmail = document.querySelector('.stampa-qui')
+// inserisco il riferimento al dom per il bottone
+const btnRefresh = document.querySelector('.btn-refresh');
 
 
 
