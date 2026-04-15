@@ -30,6 +30,13 @@ fetch(API_RANDOM_EMAIL) // vado a cercare le API e restituisco una promessa (que
 
 };
 
+btnRefresh.addEventListener('click', btnClickRefreshHandler);
+
+function btnClickRefreshHandler () {
+    console.log('click!!!!!');
+    
+}
+
  // async await   approfondire 
 
 
