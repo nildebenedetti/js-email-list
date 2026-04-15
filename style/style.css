@@ -31,7 +31,8 @@ body {
 }
 
 .btn-refresh:hover, 
-.btn-refresh:active {
+.btn-refresh:active,
+.btn-refresh:focus {
     background-color: #a98585;
     color: peachpuff;
     border: 1px solid #a98585;
