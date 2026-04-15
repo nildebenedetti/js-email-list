@@ -5,7 +5,7 @@
 const API_RANDOM_EMAIL = 'https://flynn.boolean.careers/exercises/api/random/mail';
 
 // inserisco riferimento al dom dove voglio inserire la mia email
-const divEmail = document.querySelector('.stampa-qui')
+const ulEmail = document.querySelector('.stampa-qui')
 // inserisco il riferimento al dom per il bottone
 const btnRefresh = document.querySelector('.btn-refresh');
 
@@ -17,27 +17,39 @@ const btnRefresh = document.querySelector('.btn-refresh');
 
 //per iterarlo 10 volte devo inserirlo in un ciclo for
 
-for ( let i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
 
-fetch(API_RANDOM_EMAIL) // vado a cercare le API e restituisco una promessa (quest e'l promessa)
-    .then ((risposta) => { // QUANDO la promessa si avvera, ALLORA
-        return risposta.json() // mi salva e restituisce il valore risposta in formato json per la prossima promessa (appliciamo il metodo json)
-    })
-    .then ((jsonData) => { // QUANDO anche la promessa di trasformazione del dato sara mantenuta, ALLORA
-        const randomEmail = jsonData.response;
-        divEmail.innerHTML += `<li>${randomEmail}</>`; // stampo in inner html un <li> con la mail
-    });
+    fetch(API_RANDOM_EMAIL) // vado a cercare le API e restituisco una promessa (quest e'l promessa)
+        .then((risposta) => { // QUANDO la promessa si avvera, ALLORA
+            return risposta.json() // mi salva e restituisce il valore risposta in formato json per la prossima promessa (appliciamo il metodo json)
+        })
+        .then((jsonData) => { // QUANDO anche la promessa di trasformazione del dato sara mantenuta, ALLORA
+            const randomEmail = jsonData.response;
+            ulEmail.innerHTML += `<li>${randomEmail}</>`; // stampo in inner html un <li> con la mail
+        });
 
 };
 
 btnRefresh.addEventListener('click', btnClickRefreshHandler);
 
-function btnClickRefreshHandler () {
+function btnClickRefreshHandler() {
     console.log('click!!!!!');
-    
-}
+    ulEmail.innerHTML = '';
+    for (let i = 0; i < 10; i++) {
 
- // async await   approfondire 
+        fetch(API_RANDOM_EMAIL) // vado a cercare le API e restituisco una promessa (quest e'l promessa)
+            .then((risposta) => { // QUANDO la promessa si avvera, ALLORA
+                return risposta.json() // mi salva e restituisce il valore risposta in formato json per la prossima promessa (appliciamo il metodo json)
+            })
+            .then((jsonData) => { // QUANDO anche la promessa di trasformazione del dato sara mantenuta, ALLORA
+                const randomEmail = jsonData.response;
+                ulEmail.innerHTML += `<li>${randomEmail}</>`; // stampo in inner html un <li> con la mail
+            });
+
+    };
+};
+
+// async await   approfondire 
 
 
 
