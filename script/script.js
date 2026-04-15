@@ -16,15 +16,17 @@ const divEmail = document.querySelector('.stampa-qui')
 
 fetch(API_RANDOM_EMAIL) // vado a cercare le API e restituisco una promessa (quest e'l promessa)
     .then ((risposta) => { // QUANDO la promessa si avvera, ALLORA
-        return risposta.json // mi salva e restituisce il valore risposta in formato json per la prossima promessa (appliciamo il metodo json)
+        return risposta.json() // mi salva e restituisce il valore risposta in formato json per la prossima promessa (appliciamo il metodo json)
     })
     .then ((jsonData) => { // QUANDO anche la promessa di trasformazione del dato sara mantenuta, ALLORA
-        console.log('chiamata driin'); // checkpoint se la chiamata e'andata
+        console.log(jsonData.response); // checkpoint se la chiamata e'andata
         const randomEmail = jsonData.response;
-        return randomEmail;  // mi restituirai il valore corrispondente alla chiave response dentro oggetto json
+        divEmail.innerHTML = `Eccoti una mail ${randomEmail}`;
     });
 
     
+
+ // async await   approfondire 
 
 
 
